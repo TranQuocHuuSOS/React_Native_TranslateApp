@@ -37,6 +37,14 @@ const play = () => {
   const handleRemoveFromDeck = () => {
     const updatedWordList = wordList.filter((word) => word !== currentLetter);
     setWordList(updatedWordList);
+    if (updatedWordList.length === 0) {
+      setCurrentLetter(null);
+    } else if (currentLetter === wordList[wordList.length - 1]) {
+      setCurrentLetter(wordList[0]);
+    }
+  };
+  const handleResetDeck = () => {
+    setCurrentLetter(wordList[0]); // Đặt lại currentLetter thành từ đầu tiên trong danh sách wordList
   };
   const handletranslate = () => {
     if (currentLanguage === 'english'){
@@ -52,7 +60,7 @@ const play = () => {
   //   handletranslate();
   // };
   return (
-    <View style={{flex:1,backgroundColor:"#EFEFF3", marginTop: 20 }} >
+    <View style={{flex:1,backgroundColor:"#EFEFF3" }} >
       
       <View  style={{ height: 350, backgroundColor :"#EA4559", marginHorizontal: 20, marginTop: 30, borderRadius: 10}} >
       <TouchableOpacity onPress={handletranslate} style={{ alignItems:"center", justifyContent:"center" }}>
@@ -72,7 +80,7 @@ const play = () => {
         <Text style={{padding: 20, alignItems:"center", justifyContent:'center', textAlign:'center', color:"#EA4559", fontSize: 20}}>Remove From Deck</Text>
       </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleResetDeck}>
       <View  style={{marginTop:10, marginHorizontal: 20, backgroundColor:"white", borderRadius:5}}>
         <Text style={{padding: 20,alignItems:"center", justifyContent:'center', textAlign:'center',color:"#EA4559" , fontSize: 20}}>Reset Deck</Text>
       </View>

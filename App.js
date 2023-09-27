@@ -7,8 +7,8 @@ import play from "./src/component/play/play";
 import { AntDesign,Ionicons } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator(); 
 const screenOptions = {
-  tabBarShowLabel: false,
-  headerShown: false,
+  tabBarShowLabel: true,
+  headerShown: true,
   tabBarStyle: {
     position: "absolute",
     bottom: 0,
@@ -36,7 +36,7 @@ const App = () => {
               return(
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <AntDesign name="play" size={20} color={focused? "#EA4559":"#EA4559"} />
-                  <Text style={{fontSize: 12, color:"EA4559"}}>Played</Text>
+                  
               </View>
               )
              
@@ -55,7 +55,7 @@ const App = () => {
               return(
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                 <Ionicons name="settings" size={20} color={focused? "#EA4559":"#EA4559"} />
-                  <Text style={{fontSize: 12, color:"EA4559"}}>Setting</Text>
+                 
               </View>
               )
              

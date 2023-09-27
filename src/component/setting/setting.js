@@ -1,278 +1,294 @@
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
 import styles from "./styles";
+import { FontAwesome } from "@expo/vector-icons";
 const setting = () => {
+  const [isToggleOn, setIsToggleOn] = useState(true);
+
+  const toggleSwitch = () => {
+    setIsToggleOn(!isToggleOn);
+  };
   return (
-    <View style={{flex:1,backgroundColor:"#EFEFF3", marginTop: 20 }}>
+    <View style={{ flex: 1, backgroundColor: "#EFEFF3" }}>
       <ScrollView>
-        <View style={{ marginTop: 30, marginHorizontal: 20 }}>
+        <View style={{ marginTop: 10, marginHorizontal: 20 }}>
           <Text style={{ color: "#828286", fontSize: 15 }}>HIRAGANA SETS</Text>
         </View>
         <View style={{ marginTop: 10, backgroundColor: "white" }}>
           <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#EA4559",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
+                  backgroundColor: "#EA4559",
+                  padding: 12,
+                  borderRadius: 5,
+                }}
+              >
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
 
-                  color: "#ffffff",
-                }}
-              >
-                gfd
-              </Text>
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 20,
+                  }}
+                >
+                  Hiragana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  Basic Japanses alphabet
+                </Text>
+              </View>
             </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 20,
-                }}
-              >
-                Hiragana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                }}
-              >
-                Basic Japanses alphabet
-              </Text>
-            </View>
-          </View>
           </TouchableOpacity>
           <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#EA4559",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "#ffffff",
+                  backgroundColor: "#EA4559",
+                  padding: 12,
+                  borderRadius: 5,
                 }}
               >
-                gfd
-              </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    fontSize: 20,
+                    justifyContent: "center",
+                  }}
+                >
+                  Voiced Hiragana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  Muddied consonant
+                </Text>
+              </View>
             </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                Voiced Hiragana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                Muddied consonant
-              </Text>
-            </View>
-          </View>
           </TouchableOpacity>
           <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#EA4559",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "#ffffff",
+                  backgroundColor: "#EA4559",
+                  padding: 12,
+                  borderRadius: 5,
                 }}
               >
-                gfd
-              </Text>
-            </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                Combined Hiragana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    fontSize: 20,
+                    justifyContent: "center",
+                  }}
+                >
+                  Combined Hiragana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
 
-                  justifyContent: "center",
-                }}
-              >
-                Consonant + Small
-              </Text>
+                    justifyContent: "center",
+                  }}
+                >
+                  Consonant + Small
+                </Text>
+              </View>
             </View>
-          </View>
           </TouchableOpacity>
         </View>
-        <View style={{ marginTop: 40, marginHorizontal: 20 }}>
+        <View style={{ marginTop: 10, marginHorizontal: 20 }}>
           <Text style={{ color: "#828286", fontSize: 15 }}>KATAKANA SETS</Text>
         </View>
         <View style={{ marginTop: 10, backgroundColor: "white" }}>
-        <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#F19E3B",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+          <TouchableOpacity>
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "#ffffff",
+                  backgroundColor: "#F19E3B",
+                  padding: 12,
+                  borderRadius: 5,
                 }}
               >
-                gfd
-              </Text>
-            </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                Katakana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    fontSize: 20,
+                    justifyContent: "center",
+                  }}
+                >
+                  Katakana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
 
-                  justifyContent: "center",
-                }}
-              >
-                Foreign pronunciation alphabet
-              </Text>
+                    justifyContent: "center",
+                  }}
+                >
+                  Foreign pronunciation alphabet
+                </Text>
+              </View>
             </View>
-          </View>
           </TouchableOpacity>
           <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#F19E3B",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "#ffffff",
+                  backgroundColor: "#F19E3B",
+                  padding: 12,
+                  borderRadius: 5,
                 }}
               >
-                gfd
-              </Text>
-            </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                Voiced katakana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    fontSize: 20,
+                    justifyContent: "center",
+                  }}
+                >
+                  Voiced katakana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
 
-                  justifyContent: "center",
-                }}
-              >
-                Muddied consonant
-              </Text>
+                    justifyContent: "center",
+                  }}
+                >
+                  Muddied consonant
+                </Text>
+              </View>
             </View>
-          </View>
           </TouchableOpacity>
           <TouchableOpacity>
-          <View style={{ flexDirection: "row", padding: 10 }}>
-            <View
-              style={{
-                backgroundColor: "#F19E3B",
-                padding: 12,
-                borderRadius: 5,
-              }}
-            >
-              <Text
+            <View style={{ flexDirection: "row", padding: 10 }}>
+              <View
                 style={{
-                  alignItems: "center",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "#ffffff",
+                  backgroundColor: "#F19E3B",
+                  padding: 12,
+                  borderRadius: 5,
                 }}
               >
-                gfd
-              </Text>
-            </View>
-            <View style={{ marginHorizontal: 10 }}>
-              <Text
-                style={{
-                  alignItems: "center",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                Combined Katakana
-              </Text>
-              <Text
-                style={{
-                  alignItems: "center",
+                <Text
+                  style={{
+                    alignItems: "center",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                  }}
+                >
+                  gfd
+                </Text>
+              </View>
+              <View style={{ marginHorizontal: 10 }}>
+                <Text
+                  style={{
+                    alignItems: "center",
+                    fontSize: 20,
+                    justifyContent: "center",
+                  }}
+                >
+                  Combined Katakana
+                </Text>
+                <Text
+                  style={{
+                    alignItems: "center",
 
-                  justifyContent: "center",
-                }}
-              >
-                Combined + small
-              </Text>
+                    justifyContent: "center",
+                  }}
+                >
+                  Combined + small
+                </Text>
+              </View>
             </View>
-          </View>
           </TouchableOpacity>
         </View>
-        <View style={{ marginTop: 30, marginHorizontal: 20 }}>
+        <View style={{ marginTop: 10, marginHorizontal: 20 }}>
           <Text style={{ color: "#828286", fontSize: 15 }}>PREFERENCES</Text>
         </View>
         <View style={{ marginTop: 10, backgroundColor: "white" }}>
           <View
-            style={{ flexDirection: "row", justifyContent: "space-around" }}
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-around",
+              padding: 10,
+            }}
           >
             <Text
               style={{
@@ -319,7 +335,13 @@ const setting = () => {
                 justifyContent: "center",
               }}
             >
-            Toggle
+              
+                <FontAwesome  onPress={toggleSwitch}
+                  name={isToggleOn ? "toggle-on" : "toggle-off"}
+                  size={30}
+                  color={isToggleOn ? "green" : "red"}
+                />
+             
             </Text>
           </View>
         </View>
